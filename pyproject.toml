@@ -1,0 +1,18 @@
+[project]
+name = "nsyc"
+version = "0.1.0"
+description = "Never Skip Your Content - MCP Demo"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp",
+    "aiohttp",
+    "beautifulsoup4",
+    "httpx",
+    "python-dotenv",
+    "rich",  # For pretty console output
+    "typer",   # For CLI
+    "lxml",
+    "openai",
+    "pydantic",
+]
