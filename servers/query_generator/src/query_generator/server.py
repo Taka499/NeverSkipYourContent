@@ -1,10 +1,10 @@
-# mcp_servers/query_gen/server.py
+# mcp_servers/query_generator/server.py
 import mcp.server
 from mcp.server import Server
 from mcp.types import Tool, TextContent
 import asyncio
 
-server = Server("query-gen")
+server = Server("query_generator")
 
 
 @server.tool()
