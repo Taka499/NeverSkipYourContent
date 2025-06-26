@@ -1,4 +1,4 @@
-# mcp_servers/query_generator/server.py
+# servers/query_generator/src/query_generator/server.py
 import mcp.server
 from mcp.server import Server
 from mcp.types import Tool, TextContent

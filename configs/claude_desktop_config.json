@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "query_generator": {
+      "command": "python",
+      "args": ["/path/to/servers/query_generator/src/query_generator/server.py"]
+    },
+    "search": {
+      "command": "python", 
+      "args": ["/path/to/servers/search/src/search/server.py"]
+    },
+    "page_analysis": {
+      "command": "python",
+      "args": ["/path/to/servers/page_analysis/src/page_analysis/server.py"]
+    },
+    "scraping": {
+      "command": "python",
+      "args": ["/path/to/servers/scraping/src/scraping/server.py"]
+    }
+  }
+}
