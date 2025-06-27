@@ -207,4 +207,4 @@ cython_debug/
 .cursorindexingignore
 
 # Claude Code
-.claude/
+.claude
