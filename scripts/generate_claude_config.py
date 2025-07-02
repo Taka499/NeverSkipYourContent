@@ -52,12 +52,12 @@ class ClaudeConfigGenerator:
                 
             # Look for different server entry points
             entry_points = [
-                server_dir / "run_server.py",  # web_search, page_analyzer
-                server_dir / "src" / server_dir.name / "server.py",  # query_generator
+                Path("run_server.py"),  # web_search, page_analyzer
+                Path("src") / server_dir.name / "server.py",  # query_generator
             ]
             
             for entry_point in entry_points:
-                if entry_point.exists():
+                if (server_dir / entry_point).exists():
                     server_name = server_dir.name
                     if server_name == "web_search":
                         server_name = "web_search"
@@ -67,8 +67,15 @@ class ClaudeConfigGenerator:
                         server_name = "query_generator"
                     
                     servers[server_name] = {
-                        "command": "python",
-                        "args": [str(entry_point.absolute())]
+                        "command": "uv",
+                        "args": [
+                            "--directory",
+                            # str(entry_point.absolute()),
+                            str(server_dir),
+                            "run",
+                            "python",
+                            str(entry_point)
+                        ]
                     }
                     break
         
@@ -90,7 +97,7 @@ class ClaudeConfigGenerator:
     def save_config(self, config: Dict[str, Any], output_path: Optional[Path] = None) -> Path:
         """Save configuration to file."""
         if output_path is None:
-            output_path = self.project_root / "configs" / "claude_desktop_config.json"
+            output_path = self.project_root / ".claude" / "claude_desktop_config.json"
         
         # Ensure directory exists
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -128,6 +135,7 @@ class ClaudeConfigGenerator:
             print(f"❌ Failed to install config: {e}")
             return False
     
+    # TODO: adjust finding logic
     def validate_servers(self) -> bool:
         """Validate that all server entry points exist and are executable."""
         try:
