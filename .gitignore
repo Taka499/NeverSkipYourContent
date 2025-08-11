@@ -208,3 +208,6 @@ cython_debug/
 
 # Claude Code
 .claude
+
+# VS Code
+.vscode/
