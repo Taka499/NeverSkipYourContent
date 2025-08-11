@@ -12,7 +12,7 @@ class MCPSettings(BaseSettings):
     
     # TODO: Define the actual MCP dictionary settings
     
-    DUMMY: SecretStr
+    pass
 
 class CombinedCoreSettings(LLMSettings, MCPSettings):
     """Combined settings for both LLM and MCP configurations."""

@@ -10,7 +10,7 @@ from core.agent.tools import get_mcp_tools
 
 async def run_agent(prompt: str, session_id: Optional[str] = None, user_id: Optional[str] = None) -> str:
     model = get_llm()
-    tools = get_mcp_tools()
+    tools = await get_mcp_tools()
 
     agent = create_react_agent(model, tools)
     
