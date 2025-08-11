@@ -80,7 +80,7 @@ class AWSAppSettings(CombinedCoreSettings):
     ) -> Tuple[SettingsSourceCallable, ...]:
         """Prioritize AWS Secrets Manager settings"""
         # Read env directly to avoid instantiating settings inside the hook
-        secret_name = os.getenv("APP_SECRET_NAME", "my_secret")
+        secret_name = os.getenv("APP_SECRET_NAME")
         region = (
             os.getenv("AWS_REGION")
             or os.getenv("AWS_DEFAULT_REGION")
