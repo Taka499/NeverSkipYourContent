@@ -5,6 +5,7 @@ from pydantic_settings import BaseSettings
 class LLMSettings(BaseSettings):
     """Settings for the LLM (Large Language Model) configuration."""
     OPENAI_API_KEY: SecretStr
+    OPENAI_MODEL: str
 
 class MCPSettings(BaseSettings):
     """Settings for the MCP (Model Context Protocol) configuration."""
