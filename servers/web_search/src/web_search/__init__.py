@@ -1,4 +1,4 @@
-"""Web Search MCP Server
+"""Web Search MCP Server.
 
 Provides web search functionality through multiple configurable providers.
 """

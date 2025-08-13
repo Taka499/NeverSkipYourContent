@@ -2,12 +2,14 @@
 """Run script for the web search MCP server."""
 
 import sys
-import os
+from pathlib import Path
 
 # Add src directory to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
+src_path = Path(__file__).parent / "src"
+sys.path.insert(0, str(src_path))
+
+from web_search.server import mcp
 
 # Import and run the server
 if __name__ == "__main__":
-    from web_search.server import mcp
     mcp.run()
